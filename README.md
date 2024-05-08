@@ -1,63 +1,40 @@
-# PDF Generator
+# Authentication Package
 
-A simple yet powerful PDF generation tool written in TypeScript.
+This package provides simple user authentication functionality in Python.
 
 ## Installation
 
+You can install the package via pip:
+
 ```bash
-npm install pdf-generator
+pip install authentication-package
 ```
 
 ## Usage
 
-```javascript
-const PDFGenerator = require("pdf-generator");
+Instantiate the Authentication class and use the `register` and `login` methods to handle user registration and authentication.
 
-// Create a new PDFGenerator instance
-const pdfGenerator = new PDFGenerator();
+```python
+from authentication import Authentication
 
-// Add content to the PDF
-pdfGenerator
-  .addText("Hello, this is a PDF generated using PDFGenerator!", {
-    fontSize: 20,
-    align: "center",
-  })
-  .addPage()
-  .addText("This is page 2 of the PDF.", {
-    y: 100,
-    align: "center",
-  });
+# Initialize the Authentication object
+auth = Authentication()
 
-// Save the PDF
-pdfGenerator.save();
+# Example usage: register a new user
+print(auth.register('john_doe', 'password123'))
+
+# Example usage: login with registered user
+print(auth.login('john_doe', 'password123'))
 ```
 
-## API
+## Features
 
-### `PDFGenerator(options?: PDFGeneratorOptions)`
+- User registration with password hashing
+- User login with password verification
 
-Creates a new instance of PDFGenerator with optional options.
+## Dependencies
 
-- `options.filename`: Specify the filename for the generated PDF. Default is `'output.pdf'`.
-
-### `addText(text: string, options?: TextOptions): PDFGenerator`
-
-Adds text to the PDF document.
-
-- `text`: The text content to add.
-- `options`: Optional parameters for text formatting, such as fontSize, font, alignment, etc.
-
-### `addPage(): PDFGenerator`
-
-Adds a new page to the PDF document.
-
-### `save(): void`
-
-Saves the PDF document to the specified filename.
-
-## Example
-
-Check the `example` directory for an example usage of the PDFGenerator.
+This package requires the `bcrypt` library for password hashing and verification.
 
 ## License
 
