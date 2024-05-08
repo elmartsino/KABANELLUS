@@ -38,4 +38,4 @@ This package requires the `bcrypt` library for password hashing and verification
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
